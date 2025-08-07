@@ -1,0 +1,53 @@
+{
+  "mcpServers": {
+    "n8n-mcp": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "--init",
+        "--network", "n8n-automation-network",
+        "-e", "MCP_MODE=stdio",
+        "-e", "LOG_LEVEL=error",
+        "-e", "DISABLE_CONSOLE_OUTPUT=true",
+        "-e", "N8N_API_URL=${N8N_API_URL}",
+        "-e", "N8N_API_KEY=${N8N_API_KEY}",
+        "ghcr.io/czlonkowski/n8n-mcp:latest"
+      ],
+      "env": {
+        "N8N_API_URL": "${N8N_API_URL}",
+        "N8N_API_KEY": "${N8N_API_KEY}"
+      }
+    },
+    "context7": {
+      "command": "docker",
+      "args": [
+        "run", 
+        "-i", 
+        "--rm",
+        "--network", "n8n-automation-network",
+        "node:20-alpine",
+        "sh", "-c",
+        "npm install -g @upstash/context7-mcp && context7-mcp"
+      ],
+      "autoApprove": ["resolve_library_id", "get_library_docs"],
+      "disabled": false,
+      "timeout": 60,
+      "transportType": "stdio"
+    },
+    "workflow-templates": {
+      "command": "python",
+      "args": [
+        "-m", 
+        "workflow_search_mcp"
+      ],
+      "cwd": "./mcp-servers/workflow-templates",
+      "env": {
+        "TEMPLATE_API_URL": "http://localhost:8080/api",
+        "SEARCH_TIMEOUT": "5000",
+        "LOG_LEVEL": "error"
+      }
+    }
+  }
+}

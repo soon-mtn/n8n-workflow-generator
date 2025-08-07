@@ -1,0 +1,95 @@
+{
+  "AI Agent Development": [
+    "AWS Transcribe", "AWSComprehend", "Agent", "BasicLLMChain", "ChatLiteLLM", 
+    "ChatOllama", "ChatOpenAI", "ChatgroqCloud", "Claude Chat Model", "Cohere Model", 
+    "ConversationalAgent", "ContextualCompressionRetriever", "ConversationChain", 
+    "ConversationSummaryBufferMemory", "ConversationSummaryMemory", "EmbeddingsOpenAI", 
+    "Gemini Chat Model", "GoogleVertexAI", "InMemoryChatMessageHistory", 
+    "LLMChain", "MemoryVectorStore", "MistralAI Chat Model", "Multi Retrieval QA Chain", 
+    "OpenAI", "OpenAI Assistant", "QdrantVectorStore", "Question and Answer Chain", 
+    "RetrievalQAChain", "SerpAPI", "SupabaseVectorStore", "TextSplitter", 
+    "VectorStoreRetriever", "WindowedMemory", "Zep Memory", "ZepVectorStore", 
+    "ai", "openai", "gpt", "llm", "claude", "anthropic", "langchain", "agent", 
+    "retrieval", "embedding", "vector", "rag", "chatbot"
+  ],
+  "Marketing & Advertising Automation": [
+    "AWSSES", "ActiveCampaign", "ConvertKit", "Customer.io", "Facebook Graph API", 
+    "Facebook Lead Ads", "Facebook Trigger", "GetResponse", "Google Ads", 
+    "Google Analytics", "HubSpot", "Klaviyo", "LinkedIn", "Mailchimp", 
+    "Mailjet", "Meta for Business", "Pipedrive", "SendGrid", "Sendinblue", 
+    "SendPulse", "Typeform", "Typeform Trigger", "marketing", "advertising", 
+    "campaign", "lead", "email marketing", "social media", "analytics", 
+    "conversion", "automation", "crm"
+  ],
+  "Technical Infrastructure & DevOps": [
+    "AWS", "AWSLambda", "AWSS3", "CircleCI", "Docker", "Git", "GitHub", 
+    "GitHub Trigger", "GitLab", "GitLab Trigger", "Google Cloud Firestore", 
+    "Google Cloud Functions", "Jenkins", "Kubernetes", "Redis", "SSH", 
+    "devops", "deployment", "ci/cd", "infrastructure", "cloud", "server", 
+    "monitoring", "logging", "backup", "security", "automation"
+  ],
+  "Communication & Messaging": [
+    "AWSSNS", "Discord", "Gmail", "Google Workspace Admin", "Microsoft Outlook", 
+    "Microsoft Teams", "RocketChat", "SMS", "Slack", "Telegram", "Telegram Trigger", 
+    "Twilio", "WhatsApp Business", "Zoom", "communication", "messaging", 
+    "chat", "notification", "sms", "email", "video call", "collaboration"
+  ],
+  "Cloud Storage & File Management": [
+    "AWSS3", "Box", "Box Trigger", "DropBox", "Google Cloud Storage", 
+    "Google Drive", "Google Drive Trigger", "Microsoft OneDrive", 
+    "NextCloud", "storage", "file", "backup", "sync", "document", 
+    "cloud storage", "file management", "sharing"
+  ],
+  "Project Management": [
+    "Asana", "Asana Trigger", "ClickUp", "ClickUp Trigger", "GitHub", 
+    "GitLab", "Jira Software", "Linear", "Monday.com", "Notion", 
+    "Notion Trigger", "Todoist", "Trello", "project", "task", "management", 
+    "planning", "workflow", "collaboration", "productivity", "tracking"
+  ],
+  "CRM & Sales": [
+    "Affinity", "Close.com", "Freshsales", "HubSpot", "HubSpot Trigger", 
+    "Pipedrive", "Pipedrive Trigger", "Salesforce", "SugarCRM", 
+    "ZohoCRM", "crm", "sales", "customer", "lead", "opportunity", 
+    "pipeline", "contact", "deal", "relationship"
+  ],
+  "Data Processing & Analysis": [
+    "Airtable", "Airtable Trigger", "Google BigQuery", "Google Sheets", 
+    "Google Sheets Trigger", "Microsoft Excel", "MongoDB", "MySQL", 
+    "PostgreSQL", "Redis", "SQLite", "Supabase", "data", "database", 
+    "analytics", "processing", "transformation", "analysis", "reporting", 
+    "spreadsheet", "sql", "etl"
+  ],
+  "Financial & Accounting": [
+    "ChargeBee", "Paddle", "Paypal", "Paypal Trigger", "QuickBooks", 
+    "Stripe", "Stripe Trigger", "Wise", "Xero", "financial", "accounting", 
+    "payment", "invoice", "billing", "expense", "revenue", "transaction", 
+    "money", "finance"
+  ],
+  "Web Scraping & Data Extraction": [
+    "Brandfetch", "HTTP Request", "NASA", "OpenWeatherMap", "RSS Feed Read", 
+    "Webhook", "scraping", "extraction", "api", "http", "web", "data collection", 
+    "rss", "feed", "weather", "external data"
+  ],
+  "E-commerce & Retail": [
+    "Magento", "PrestaShop", "Shopify", "Shopify Partner", "Shopify Trigger", 
+    "Square", "WooCommerce", "WooCommerce Trigger", "ecommerce", "retail", 
+    "shop", "store", "product", "order", "inventory", "commerce", "selling"
+  ],
+  "Business Process Automation": [
+    "Calendly", "Calendly Trigger", "Cron", "DateTime", "Edit Fields", 
+    "Filter", "Function", "IF", "Item Lists", "Merge", "Move Binary Data", 
+    "Schedule Trigger", "Set", "Split In Batches", "Stop and Error", 
+    "Switch", "Wait", "automation", "process", "workflow", "trigger", 
+    "schedule", "batch", "condition", "transform"
+  ],
+  "Content Management & Publishing": [
+    "Ghost", "Medium", "Strapi", "Webflow", "WordPress", "content", 
+    "publishing", "blog", "cms", "website", "article", "post", "media", 
+    "editorial", "writing"
+  ],
+  "Social Media Management": [
+    "Buffer", "Facebook Graph API", "Instagram", "LinkedIn", "Meta for Business", 
+    "Reddit", "TikTok", "Twitter", "YouTube", "social media", "social", 
+    "post", "sharing", "engagement", "followers", "content distribution"
+  ]
+}

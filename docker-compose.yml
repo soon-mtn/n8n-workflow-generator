@@ -1,0 +1,82 @@
+version: '3.8'
+
+services:
+  # Serveur n8n-mcp officiel
+  n8n-mcp:
+    image: ghcr.io/czlonkowski/n8n-mcp:latest
+    environment:
+      - MCP_MODE=stdio
+      - LOG_LEVEL=error
+      - DISABLE_CONSOLE_OUTPUT=true
+      - N8N_API_URL=${N8N_API_URL}
+      - N8N_API_KEY=${N8N_API_KEY}
+      - N8N_WEBHOOK_USERNAME=${N8N_WEBHOOK_USERNAME}
+      - N8N_WEBHOOK_PASSWORD=${N8N_WEBHOOK_PASSWORD}
+    volumes:
+      - ./workflows:/app/workflows
+      - n8n-mcp-data:/app/data
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    networks:
+      - n8n-automation
+
+  # Serveur context7 pour documentation API temps réel (package officiel)
+  context7-mcp:
+    image: node:20-alpine
+    command: sh -c "npm install -g @upstash/context7-mcp && context7-mcp"
+    environment:
+      - NODE_ENV=production
+      - LOG_LEVEL=info
+      - UPSTASH_REDIS_REST_URL=${UPSTASH_REDIS_REST_URL}
+      - UPSTASH_REDIS_REST_TOKEN=${UPSTASH_REDIS_REST_TOKEN}
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    networks:
+      - n8n-automation
+
+  # API REST pour recherche de templates
+  workflow-templates-api:
+    build: ./mcp-servers/workflow-templates/
+    environment:
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - DATABASE_PATH=/app/data/workflows.db
+      - CORS_ORIGINS=${ALLOWED_ORIGINS:-http://localhost:*}
+      - LOG_LEVEL=info
+    ports:
+      - "8000:8000"
+    volumes:
+      - workflow-data:/app/data
+      - ./workflows/templates:/app/templates
+    restart: unless-stopped
+    networks:
+      - n8n-automation
+
+  # Serveur MCP pour workflow-templates (séparé de l'API)
+  workflow-templates-mcp:
+    image: python:3.11-slim
+    working_dir: /app
+    command: sh -c "pip install mcp httpx && python -m workflow_search_mcp"
+    environment:
+      - TEMPLATE_API_URL=http://workflow-templates-api:8000/api
+      - SEARCH_TIMEOUT=5000
+      - LOG_LEVEL=error
+    volumes:
+      - ./mcp-servers/workflow-templates:/app
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    networks:
+      - n8n-automation
+    depends_on:
+      - workflow-templates-api
+
+volumes:
+  n8n-mcp-data:
+  workflow-data:
+
+networks:
+  n8n-automation:
+    name: n8n-automation-network
