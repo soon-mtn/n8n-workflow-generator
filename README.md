@@ -79,20 +79,65 @@ Les 3 serveurs MCP sont déjà configurés dans `config/claude-code-config.json`
 
 ## 🛠️ Outils MCP Disponibles
 
-### **N8N-MCP (25+ outils)**
-- `search_nodes()`, `get_node_essentials()`, `validate_workflow()`
-- `n8n_create_workflow()`, `n8n_list_executions()`
-- Documentation complète des 525+ nodes n8n
+### **N8N-MCP (30+ outils) - Serveur Officiel**
 
-### **Context7 (2 outils)**  
-- `resolve_library_id()` → Résout IDs bibliothèques
-- `get_library_docs()` → Documentation à jour
+#### 🔍 **Outils Principaux**
+- `tools_documentation()` - Documentation de tous les outils MCP (**COMMENCEZ ICI !**)
+- `list_nodes()` - Liste tous les nodes n8n avec options de filtrage
+- `get_node_info()` - Informations complètes sur un node spécifique
+- `get_node_essentials()` - Propriétés essentielles uniquement (10-20 vs 200+)
+- `search_nodes()` - Recherche full-text dans toute la documentation
+- `search_node_properties()` - Trouve des propriétés spécifiques dans les nodes
+- `list_ai_tools()` - Liste tous les nodes compatibles IA (TOUT node peut être un outil IA !)
+- `get_node_as_tool_info()` - Guide pour utiliser n'importe quel node comme outil IA
 
-### **Workflow-Templates (4 outils)**
-- `search_templates()` → Recherche FTS5 dans 2,057+ templates
-- `get_template_metadata()` → Détails complets workflow
-- `list_categories()` → 13 catégories avec compteurs
-- `list_popular_templates()` → Top templates par complexité
+#### ⚙️ **Outils Avancés**
+- `get_node_for_task()` - Configurations pré-définies pour tâches courantes
+- `list_tasks()` - Découvrir les templates de tâches disponibles
+- `validate_node_operation()` - Validation complète des configurations node
+- `validate_node_minimal()` - Validation rapide des champs requis uniquement
+- `validate_workflow()` - Validation complète workflow + connexions IA
+- `validate_workflow_connections()` - Vérifier structure et connexions IA
+- `validate_workflow_expressions()` - Valider expressions n8n incluant $fromAI()
+- `get_property_dependencies()` - Analyser conditions de visibilité des propriétés
+- `get_node_documentation()` - Documentation parsée depuis n8n-docs
+- `get_database_statistics()` - Métriques base de données et couverture
+
+#### 🌐 **Outils de Gestion n8n (Optionnel - Nécessite API)**
+*Outils puissants pour gérer n8n directement depuis Claude. Disponibles seulement avec N8N_API_URL et N8N_API_KEY configurés.*
+
+**Gestion des Workflows**
+- `n8n_create_workflow()` - Créer nouveaux workflows avec nodes et connexions
+- `n8n_get_workflow()` - Récupérer workflow complet par ID
+- `n8n_get_workflow_details()` - Workflow avec statistiques d'exécution
+- `n8n_get_workflow_structure()` - Structure simplifiée du workflow
+- `n8n_get_workflow_minimal()` - Info minimale (ID, nom, statut actif)
+- `n8n_update_full_workflow()` - Mise à jour complète (remplacement total)
+- `n8n_update_partial_workflow()` - Mise à jour via opérations diff (**NOUVEAU v2.7.0!**)
+- `n8n_delete_workflow()` - Supprimer workflows définitivement
+- `n8n_list_workflows()` - Lister workflows avec filtres et pagination
+- `n8n_validate_workflow()` - Valider workflows existants dans n8n par ID (**NOUVEAU v2.6.3**)
+
+**Gestion des Exécutions**
+- `n8n_trigger_webhook_workflow()` - Déclencher workflows via URL webhook
+- `n8n_get_execution()` - Détails d'exécution par ID
+- `n8n_list_executions()` - Lister exécutions avec filtres de statut
+- `n8n_delete_execution()` - Supprimer enregistrements d'exécution
+
+**Outils Système**
+- `n8n_health_check()` - Vérifier connectivité API n8n et fonctionnalités
+- `n8n_diagnostic()` - Diagnostic outils de gestion et configuration
+- `n8n_list_available_tools()` - Lister tous les outils de gestion disponibles
+
+### **Context7-MCP (2 outils) - Documentation Temps Réel**  
+- `resolve_library_id()` - Résout IDs bibliothèques vers format Context7
+- `get_library_docs()` - Documentation API à jour en temps réel
+
+### **Workflow-Templates (4 outils) - Recherche Intelligente**
+- `search_templates()` - Recherche FTS5 dans 2,057+ templates validés
+- `get_template_metadata()` - Détails complets et métadonnées
+- `list_categories()` - 13 catégories avec compteurs de templates
+- `list_popular_templates()` - Top templates par complexité et usage
 
 ## 📁 Structure du Projet
 
