@@ -81,53 +81,54 @@ Les 3 serveurs MCP sont déjà configurés dans `config/claude-code-config.json`
 
 ### **N8N-MCP (30+ outils) - Serveur Officiel**
 
-#### 🔍 **Outils Principaux**
+#### 📚 **Documentation & Découverte**
 - `tools_documentation()` - Documentation de tous les outils MCP (**COMMENCEZ ICI !**)
+- `get_node_documentation()` - Documentation parsée depuis n8n-docs
+- `get_database_statistics()` - Métriques base de données et couverture
+- `n8n_list_available_tools()` - Lister tous les outils de gestion disponibles
+
+#### 🔍 **Recherche & Exploration**
 - `list_nodes()` - Liste tous les nodes n8n avec options de filtrage
+- `search_nodes()` - Recherche full-text dans toute la documentation
 - `get_node_info()` - Informations complètes sur un node spécifique
 - `get_node_essentials()` - Propriétés essentielles uniquement (10-20 vs 200+)
-- `search_nodes()` - Recherche full-text dans toute la documentation
 - `search_node_properties()` - Trouve des propriétés spécifiques dans les nodes
+- `get_property_dependencies()` - Analyser conditions de visibilité des propriétés
+
+#### 🤖 **Outils IA & Templates**
 - `list_ai_tools()` - Liste tous les nodes compatibles IA (TOUT node peut être un outil IA !)
 - `get_node_as_tool_info()` - Guide pour utiliser n'importe quel node comme outil IA
-
-#### ⚙️ **Outils Avancés**
 - `get_node_for_task()` - Configurations pré-définies pour tâches courantes
 - `list_tasks()` - Découvrir les templates de tâches disponibles
+
+#### ✅ **Validation & Qualité**
 - `validate_node_operation()` - Validation complète des configurations node
 - `validate_node_minimal()` - Validation rapide des champs requis uniquement
 - `validate_workflow()` - Validation complète workflow + connexions IA
 - `validate_workflow_connections()` - Vérifier structure et connexions IA
 - `validate_workflow_expressions()` - Valider expressions n8n incluant $fromAI()
-- `get_property_dependencies()` - Analyser conditions de visibilité des propriétés
-- `get_node_documentation()` - Documentation parsée depuis n8n-docs
-- `get_database_statistics()` - Métriques base de données et couverture
+- `n8n_validate_workflow()` - Valider workflows existants dans n8n par ID (**NOUVEAU v2.6.3**)
 
-#### 🌐 **Outils de Gestion n8n (Optionnel - Nécessite API)**
-*Outils puissants pour gérer n8n directement depuis Claude. Disponibles seulement avec N8N_API_URL et N8N_API_KEY configurés.*
-
-**Gestion des Workflows**
+#### 🛠️ **Gestion des Workflows**
 - `n8n_create_workflow()` - Créer nouveaux workflows avec nodes et connexions
 - `n8n_get_workflow()` - Récupérer workflow complet par ID
 - `n8n_get_workflow_details()` - Workflow avec statistiques d'exécution
 - `n8n_get_workflow_structure()` - Structure simplifiée du workflow
 - `n8n_get_workflow_minimal()` - Info minimale (ID, nom, statut actif)
+- `n8n_list_workflows()` - Lister workflows avec filtres et pagination
 - `n8n_update_full_workflow()` - Mise à jour complète (remplacement total)
 - `n8n_update_partial_workflow()` - Mise à jour via opérations diff (**NOUVEAU v2.7.0!**)
 - `n8n_delete_workflow()` - Supprimer workflows définitivement
-- `n8n_list_workflows()` - Lister workflows avec filtres et pagination
-- `n8n_validate_workflow()` - Valider workflows existants dans n8n par ID (**NOUVEAU v2.6.3**)
 
-**Gestion des Exécutions**
+#### ⚡ **Exécutions & Déclenchement**
 - `n8n_trigger_webhook_workflow()` - Déclencher workflows via URL webhook
 - `n8n_get_execution()` - Détails d'exécution par ID
 - `n8n_list_executions()` - Lister exécutions avec filtres de statut
 - `n8n_delete_execution()` - Supprimer enregistrements d'exécution
 
-**Outils Système**
+#### 🏥 **Système & Diagnostic**
 - `n8n_health_check()` - Vérifier connectivité API n8n et fonctionnalités
 - `n8n_diagnostic()` - Diagnostic outils de gestion et configuration
-- `n8n_list_available_tools()` - Lister tous les outils de gestion disponibles
 
 ### **Context7-MCP (2 outils) - Documentation Temps Réel**  
 - `resolve_library_id()` - Résout IDs bibliothèques vers format Context7
