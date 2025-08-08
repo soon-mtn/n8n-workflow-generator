@@ -1,6 +1,13 @@
-# N8N Workflow Generator 
+# N8N Workflow Generator 🚀
 
-**Système automatisé de génération de workflows n8n avec Claude Code et 3 serveurs MCP spécialisés.**
+**Système automatisé de génération de workflows n8n compatible avec Claude Code, Gemini CLI et Cursor AI grâce à 3 serveurs MCP spécialisés.**
+
+## 🤖 Support Multi-Agent IA
+
+Ce système fonctionne avec **3 agents IA** différents :
+- 🎯 **Claude Code** - Configuration native optimisée
+- ⚡ **Gemini CLI** - Support complet avec tous les outils MCP
+- 🔧 **Cursor AI** - Intégration IDE pour développement
 
 ## 🚀 Installation Ultra-Rapide
 
@@ -19,7 +26,7 @@
 
 ```
 📦 N8N Workflow Generator
-├── 🤖 Claude Code + 3 Serveurs MCP
+├── 🤖 Multi-Agent Support (Claude Code, Gemini CLI, Cursor AI)
 │   ├── n8n-mcp (Official)          → 525+ nodes n8n documentés
 │   ├── context7-mcp (Official)     → Documentation API temps réel
 │   └── workflow-templates          → 2,057+ templates searchables
@@ -28,13 +35,27 @@
 └── 📊 API REST FastAPI             → 7 endpoints + statistiques
 ```
 
-## 🎯 Utilisation
+## 🎯 Utilisation Multi-Agent
 
-### **Génération de workflows avec Claude Code :**
+### **Avec Claude Code :**
 ```bash
 # Claude Code utilise automatiquement les 3 serveurs MCP
 claude code "Créer un workflow Telegram vers Slack avec IA"
 # → Recherche dans 2,057+ templates + génération optimisée
+```
+
+### **Avec Gemini CLI :**
+```bash
+# Gemini CLI avec support MCP complet
+gemini agent "Générer workflow automation business Slack+OpenAI"
+# → Accès aux mêmes 525+ nodes + templates
+```
+
+### **Avec Cursor AI :**
+```bash
+# Dans Cursor IDE : Ctrl+Shift+I puis
+"Créer workflow n8n pour automatisation email vers Discord"
+# → Génération directe dans l'éditeur + validation
 ```
 
 ### **Commandes de gestion :**
@@ -69,13 +90,28 @@ curl http://localhost:8000/api/stats
 - **4 types triggers** : Manual (789), Complex (708), Schedule (301), Webhook (259)
 - **3 niveaux complexité** : Simple, Intermediate, Advanced
 
-## 🔧 Configuration MCP (Auto-configurée)
+## 🔧 Configuration Multi-Agent (Auto-configurée)
 
-Les 3 serveurs MCP sont déjà configurés dans `config/claude-code-config.json` :
+Les 3 serveurs MCP sont automatiquement configurés pour chaque agent :
 
-- **n8n-mcp** → Documentation complète nodes n8n
+### **Structure de Configuration :**
+```
+n8n-workflow-generator/
+├── .claude/
+│   ├── settings.local.json      # Claude Code - Configuration MCP + schéma JSON
+│   └── system-prompt.md         # Prompt système spécialisé Claude
+├── .gemini/
+│   ├── settings.json            # Gemini CLI - Support timeout + trust levels
+│   └── system-prompt.md         # Prompt système spécialisé Gemini
+├── .cursor/
+│   ├── mcp.json                 # Cursor AI - Configuration MCP simplifiée
+│   └── system-prompt.md         # Prompt système spécialisé Cursor
+```
+
+### **Serveurs MCP Partagés :**
+- **n8n-mcp** → Documentation complète 525+ nodes n8n
 - **context7** → APIs externes temps réel  
-- **workflow-templates** → Templates searchables
+- **workflow-templates** → 2,057+ templates searchables
 
 ## 🛠️ Outils MCP Disponibles
 
@@ -144,21 +180,26 @@ Les 3 serveurs MCP sont déjà configurés dans `config/claude-code-config.json`
 
 ```
 n8n-workflow-generator/
-├── config/
-│   ├── claude-code-config.json    # Configuration MCP servers
-│   └── system-prompt.md           # Prompt expert pour Claude
+├── .claude/                      # Configuration Claude Code
+│   ├── settings.local.json      # MCP + schéma JSON + permissions
+│   └── system-prompt.md         # Prompt expert spécialisé
+├── .gemini/                      # Configuration Gemini CLI  
+│   ├── settings.json            # MCP + timeout + trust
+│   └── system-prompt.md         # Prompt expert spécialisé
+├── .cursor/                      # Configuration Cursor AI
+│   ├── mcp.json                 # MCP simple + clean
+│   └── system-prompt.md         # Prompt expert spécialisé
 ├── mcp-servers/
-│   ├── context7/                  # Package officiel Context7
 │   └── workflow-templates/        # Serveur templates + API
 │       ├── api_server.py         # API REST + MCP server
-│       ├── def_categories.json   # 15 catégories GitHub
-│       └── workflow_search_mcp.py # Serveur MCP
+│       ├── def_categories.json   # 13 catégories automatiques
+│       └── workflow_search_mcp.py # Serveur MCP Python
 ├── scripts/
-│   ├── setup.sh                 # Installation complète
-│   ├── test-workflow.sh         # Tests
-│   └── validate-config.js       # Validation config
-├── workflows/templates/          # 2,057+ fichiers JSON
-└── docker-compose.yml           # Orchestration services
+│   ├── setup.sh                 # Installation complète multi-agent
+│   ├── test-workflow.sh         # Tests fonctionnels
+│   └── validate-config.js       # Validation toutes configs
+├── workflows/templates/          # 2,057+ workflows JSON validés
+└── docker-compose.yml           # Orchestration 4 services
 ```
 
 ## 🎉 Fonctionnalités
@@ -195,7 +236,14 @@ python api_server.py --populate
 
 **Erreur : MCP non connecté**
 ```bash
-claude mcp list  # Voir état serveurs
+# Pour Claude Code
+claude mcp list
+
+# Pour Gemini CLI  
+gemini mcp status
+
+# Pour Cursor AI
+# Voir MCP Logs dans Output panel (Ctrl+Shift+U)
 ```
 
 ## 📈 Statistiques Système
@@ -204,7 +252,3 @@ Une fois démarré, accédez aux statistiques :
 - **API Health** : http://localhost:8000/health
 - **Catégories** : http://localhost:8000/api/categories  
 - **Stats complètes** : http://localhost:8000/api/stats
-
----
-
-**Le système réduit le temps de création de workflows de 45 minutes à 3 minutes avec 100% de précision !** ⚡

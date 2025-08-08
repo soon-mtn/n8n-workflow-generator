@@ -30,11 +30,7 @@
         "node:20-alpine",
         "sh", "-c",
         "npm install -g @upstash/context7-mcp && context7-mcp"
-      ],
-      "autoApprove": ["resolve_library_id", "get_library_docs"],
-      "disabled": false,
-      "timeout": 60,
-      "transportType": "stdio"
+      ]
     },
     "workflow-templates": {
       "command": "python",
@@ -44,7 +40,7 @@
       ],
       "cwd": "./mcp-servers/workflow-templates",
       "env": {
-        "TEMPLATE_API_URL": "http://localhost:8080/api",
+        "TEMPLATE_API_URL": "http://localhost:8000/api",
         "SEARCH_TIMEOUT": "5000",
         "LOG_LEVEL": "error"
       }
